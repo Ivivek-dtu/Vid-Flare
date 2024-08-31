@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from '../../axios.js';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  console.log("register")
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -29,7 +28,6 @@ const Register = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      // Handle successful registration, e.g., redirect to login page
       console.log('Registration successful:', response.data);
       navigate('/login');
     } catch (err) {
